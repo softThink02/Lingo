@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function UpgradeCard() {
   return (
     <div className="relative bg-gradient-to-b from-neutral-900 to-neutral-950 border border-neutral-800 rounded-2xl p-4 text-center flex flex-col items-center gap-3 shadow-[0_0_12px_rgba(0,0,0,0.6)]">
-      <div className="flex items-center justify-center rounded-full bg-black/40 border border-neutral-700 mb-2">
+      <div className="flex items-center justify-center rounded-full mb-2">
         <Image src={'/lock.svg'} width={60} height={60} alt='lock' />
       </div>
       <p className="text-gray-400 text-sm leading-snug">

@@ -22,6 +22,7 @@ const config: Config = {
       fontFamily: {
         nohemi: ["Nohemi", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        inter : ['Inter', 'sans-serif']
       },
       colors: {},
     },
