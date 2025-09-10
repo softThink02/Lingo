@@ -3,9 +3,10 @@
 import Link from "next/link";
 import clsx from "clsx";
 import { ReactNode } from "react";
+import Image from 'next/image'
 
 type SidebarLinkProps = {
-  icon: ReactNode;
+  icon: ReactNode | string;
   label: string;
   href?: string;
   active?: boolean;
@@ -17,7 +18,7 @@ type SidebarLinkProps = {
 export default function SidebarLink({
   icon,
   label,
-  href,
+  href = label.split(' ').join('-').toLowerCase(),
   active = false,
   onClick,
   className,
@@ -36,10 +37,14 @@ export default function SidebarLink({
 
   const inner = (
     <>
+    {typeof icon === "string" ? (
+      <Image src={icon} width={24} height={24} alt='icon' /> 
+    ) : (
       <span className={iconWrapper} aria-hidden>
         {icon}
       </span>
-      <span className="text-gray-200">{label}</span>
+    )}
+    <span className="text-gray-200">{label}</span>
     </>
   );
 
