@@ -38,7 +38,7 @@ export default function SidebarLink({
   const inner = (
     <>
     {typeof icon === "string" ? (
-      <Image src={icon} alt='icon' /> 
+      <Image src={icon} width={24} height={24} alt='icon' /> 
     ) : (
       <span className={iconWrapper} aria-hidden>
         {icon}
