@@ -6,6 +6,7 @@ type SkillNode = {
   id: string;
   status: "locked" | "unlocked" | "active";
   icon?: React.ReactNode;
+  right? : boolean
 };
 
 type SkillPathProps = {
@@ -20,28 +21,33 @@ export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
         Take Skill Quiz
       </button>
 
-      {levels.map((row, rowIndex) => (
-        <div
-          key={rowIndex}
-          className={`flex ${
-            rowIndex >= 1 && "justify-end w-[100%]"
-          } items-center relative mt-6`}
-        >
-          {row.map((node, ind) => (
-            <div key={node.id} className={`flex items-center`}>
-              <div className="w-12 h-[1px] bg-white my-auto" />
-              <HexNode
-                status={node.status}
-                icon={node.icon}
-                onClick={() => onSelectNode?.(node.id)}
-              />
-              {ind < row.length - 1 && (
-                <div className="w-12 h-[1px] bg-white my-auto" />
-              )}
-            </div>
-          ))}
-        </div>
-      ))}
+      {levels.map((row, rowIndex) => {
+        let justifyClass = "justify-center";
+        if (row.length > 1 && rowIndex === 0) justifyClass = "justify-start";
+        else if (row.length > 1 && rowIndex === 2) justifyClass = "justify-end";
+
+        return (
+          <div
+            key={rowIndex}
+            className={`flex ${justifyClass} items-center relative w-full`}
+          >
+            {row.map((node, ind) => (
+              <div key={node.id} className="flex items-center">
+                {(rowIndex == 2 && ind != 1) && <div className="w-12 h-[1px] my-auto" />}
+                {(rowIndex == 2 && ind != 1) && <div className="w-16 h-[1px] my-auto" />}
+                <HexNode
+                  status={node.status}
+                  icon={node.icon}
+                  onClick={() => onSelectNode?.(node.id)}
+                />
+                {ind < row.length - 1 && (
+                  <div className="w-12 h-[1px] bg-white my-auto" />
+                )}
+              </div>
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 }
