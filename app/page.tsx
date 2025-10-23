@@ -17,9 +17,10 @@ export default function DashboardPage() {
           <div className="flex-1 flex items-center justify-center">
             <SkillPath
               levels={[
-                [{ id: "intro", status: "active" }],
-                [{ id: "lesson1", status: "unlocked" }, { id: "lesson2", status: "locked" }],
-                [{ id: "lesson3", status: "locked" }, { id: "lesson4", status: "locked" }, { id: "lesson5", status: "locked" }],
+                [{ id: "intro", status: "active" }, { id: "lesson1", status: "unlocked" }],
+                [{ id: "lesson2", status: "locked" }],
+                [{ id: "lesson3", status: "locked"}, { id: "lesson4", status: "unlocked"}],
+                [ { id: "lesson5", status: "locked" }]
               ]}
               onSelectNode={(id) => console.log("Clicked node:", id)}
             />
