@@ -21,24 +21,22 @@ export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
         Take Skill Quiz
       </button>
 
-      <div>
-        {levels.map((row, rowIndex) => {
-          let justifyClass = "justify-center";
-          if (row.length > 1 && rowIndex === 0) justifyClass = "justify-start";
-          else if (row.length > 1 && rowIndex === 2)
-            justifyClass = "justify-end";
+      {levels.map((row, rowIndex) => {
+        let justifyClass = "justify-center";
+        if (row.length > 1 && rowIndex === 0) justifyClass = "justify-start";
+        else if (row.length > 1 && rowIndex === 2) justifyClass = "justify-end";
 
-          return (
-            <div
-              key={rowIndex}
-              className={`flex ${justifyClass} ${
-                rowIndex == 0 && "items-start"
-              } items-center relative w-full`}
-            >
-              {row.map((node, ind) => (
-                <div
-                  key={node.id}
-                  className={`flex
+        return (
+          <div
+            key={rowIndex}
+            className={`flex ${justifyClass} ${
+              rowIndex == 0 && "items-start"
+            } items-center relative w-full`}
+          >
+            {row.map((node, ind) => (
+              <div
+                key={node.id}
+                className={`flex
                 ${
                   rowIndex == 0 && ind == 0
                     ? "items-start self-start"
@@ -46,30 +44,29 @@ export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
                 }
                 ${rowIndex == 0 && ind == 1 ? "flex-col" : ""}
               `}
-                >
-                  {rowIndex == 2 && ind != 1 && (
-                    <div className="w-12 h-[1px] my-auto" />
-                  )}
-                  {rowIndex == 2 && ind != 1 && (
-                    <div className="w-16 h-[1px] my-auto" />
-                  )}
-                  <HexNode
-                    status={node.status}
-                    icon={node.icon}
-                    onClick={() => onSelectNode?.(node.id)}
-                  />
-                  {ind < row.length - 1 && (
-                    <div className="w-12 h-[1px] bg-white my-auto" />
-                  )}
-                  {rowIndex == 0 && ind === 1 && (
-                    <div className="h-12 w-[1px] bg-white my-auto" />
-                  )}
-                </div>
-              ))}
-            </div>
-          );
-        })}
-      </div>
+              >
+                {rowIndex == 2 && ind != 1 && (
+                  <div className="w-12 h-[1px] my-auto" />
+                )}
+                {rowIndex == 2 && ind != 1 && (
+                  <div className="w-16 h-[1px] my-auto" />
+                )}
+                <HexNode
+                  status={node.status}
+                  icon={node.icon}
+                  onClick={() => onSelectNode?.(node.id)}
+                />
+                {ind < row.length - 1 && (
+                  <div className="w-12 h-[1px] bg-white my-auto" />
+                )}
+                {rowIndex == 0 && ind === 1 && (
+                  <div className="h-12 w-[1px] bg-white my-auto" />
+                )}
+              </div>
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 }
