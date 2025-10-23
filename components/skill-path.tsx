@@ -17,9 +17,12 @@ type SkillPathProps = {
 export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
   return (
     <div className="flex flex-col items-center">
-      <button className="mt-6 px-6 py-2 mb-4 rounded-xl bg-yellow-500 text-black font-semibold hover:bg-yellow-400 transition-all shadow-md">
-        Take Skill Quiz
-      </button>
+      <div className='flex flex-col'>
+        <button className="mt-6 px-6 py-2 rounded-xl bg-yellow-500 text-black font-semibold hover:bg-yellow-400 transition-all shadow-md">
+          Take Skill Quiz
+        </button>
+        <div className="h-8 w-[1px] bg-gray-300 my-0 mx-auto" />
+      </div>
 
       {levels.map((row, rowIndex) => {
         let justifyClass = "justify-center";
@@ -42,7 +45,11 @@ export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
                     ? "items-start self-start"
                     : "items-center"
                 }
-                ${(rowIndex == 0 && ind == 1) || (rowIndex == 3) || (rowIndex == 1) ? "flex-col" : ""}
+                ${
+                  (rowIndex == 0 && ind == 1) || rowIndex == 3 || rowIndex == 1
+                    ? "flex-col"
+                    : ""
+                }
               `}
               >
                 {rowIndex == 2 && ind != 1 && (
@@ -52,7 +59,7 @@ export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
                   <div className="w-16 h-[1px] my-auto" />
                 )}
                 {rowIndex == 3 && (
-                  <div className="h-16 w-[1px] bg-white my-auto" />
+                  <div className="h-20 w-[1px] bg-white my-auto" />
                 )}
                 <HexNode
                   status={node.status}
@@ -63,10 +70,10 @@ export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
                   <div className="w-12 h-[1px] bg-white my-auto" />
                 )}
                 {rowIndex == 0 && ind === 1 && (
-                  <div className="h-16 w-[1px] bg-white my-auto" />
+                  <div className="h-20 w-[1px] bg-white my-auto" />
                 )}
                 {rowIndex == 1 && (
-                  <div className="h-16 w-[1px] bg-white my-auto" />
+                  <div className="h-20 w-[1px] bg-white my-auto" />
                 )}
               </div>
             ))}
