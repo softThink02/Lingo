@@ -42,7 +42,7 @@ export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
                     ? "items-start self-start"
                     : "items-center"
                 }
-                ${(rowIndex == 0 && ind == 1) || (rowIndex == 3) ? "flex-col" : ""}
+                ${(rowIndex == 0 && ind == 1) || (rowIndex == 3) || (rowIndex == 1) ? "flex-col" : ""}
               `}
               >
                 {rowIndex == 2 && ind != 1 && (
@@ -52,7 +52,7 @@ export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
                   <div className="w-16 h-[1px] my-auto" />
                 )}
                 {rowIndex == 3 && (
-                  <div className="h-12 w-[1px] bg-white my-auto" />
+                  <div className="h-16 w-[1px] bg-white my-auto" />
                 )}
                 <HexNode
                   status={node.status}
@@ -63,9 +63,11 @@ export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
                   <div className="w-12 h-[1px] bg-white my-auto" />
                 )}
                 {rowIndex == 0 && ind === 1 && (
-                  <div className="h-12 w-[1px] bg-white my-auto" />
+                  <div className="h-16 w-[1px] bg-white my-auto" />
                 )}
-                
+                {rowIndex == 1 && (
+                  <div className="h-16 w-[1px] bg-white my-auto" />
+                )}
               </div>
             ))}
           </div>
