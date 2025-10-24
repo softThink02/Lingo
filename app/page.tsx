@@ -8,12 +8,12 @@ import XPChart from "@/components/xp-charts";
 
 export default function DashboardPage() {
   return (
-    <div className="flex h-screen bg-black text-white">
+    <div className="flex h-screen bg-black text-white w-screen overflow-hidden">
       <Sidebar />
-      <main className="flex-1 flex flex-col bg-[linear-gradient(to_bottom,#2b2929_20%,yellow-500_80%)] ">
+      <main className="flex-1 flex relative overflow-hidden pr-2 mr-2 flex-col bg-[linear-gradient(to_bottom,#2b2929_20%,yellow-500_80%)] ">
         <Topbar title="Overview" xp={350} xpGoal={500} avatarUrl="/avatar.png" />
 
-        <div className="flex flex-1 gap-6 p-6 overflow-y-auto">
+        <div className="flex w-[100%] flex-1 mx-auto my-0 gap-6 py-4 overflow-y-auto">
           <div className="flex-1 flex items-center justify-center">
             <SkillPath
               levels={[

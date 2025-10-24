@@ -15,7 +15,7 @@ type StreakTrackerProps = {
 
 export default function StreakTracker({ days }: StreakTrackerProps) {
   return (
-    <div className="bg-neutral-900 rounded-2xl p-4 shadow-lg border border-neutral-800">
+    <div className=" p-4 bg-[url('/BG.png')] overflow-hidden">
       <p className="text-sm text-gray-300 mb-3">Streak Tracker</p>
 
       <div className="flex justify-between gap-2">
