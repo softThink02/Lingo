@@ -18,8 +18,8 @@ export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
   return (
     <div className="flex flex-col items-center">
       <div className='flex flex-col'>
-        <button className="mt-6 px-6 py-2 rounded-xl bg-yellow-500 text-black font-semibold hover:bg-yellow-400 transition-all shadow-md">
-          Take Skill Quiz
+        <button className="mt-6 px-6 py-3 font-inter rounded-xl bg-neutral-600 text-white text-[12px] font-[400] transition-all shadow-md">
+          Take Skill Quiz To Start
         </button>
         <div className="h-8 w-[1px] bg-gray-300 my-0 mx-auto" />
       </div>
@@ -59,7 +59,7 @@ export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
                   <div className="w-16 h-[1px] my-auto" />
                 )}
                 {rowIndex == 3 && (
-                  <div className="h-20 w-[1px] bg-white my-auto" />
+                  <div className="h-24 w-[1px] bg-white my-auto" />
                 )}
                 <HexNode
                   status={node.status}
@@ -70,10 +70,10 @@ export default function SkillPath({ levels, onSelectNode }: SkillPathProps) {
                   <div className="w-12 h-[1px] bg-white my-auto" />
                 )}
                 {rowIndex == 0 && ind === 1 && (
-                  <div className="h-20 w-[1px] bg-white my-auto" />
+                  <div className="h-24 w-[1px] bg-white my-auto" />
                 )}
                 {rowIndex == 1 && (
-                  <div className="h-20 w-[1px] bg-white my-auto" />
+                  <div className="h-24 w-[1px] bg-white my-auto" />
                 )}
               </div>
             ))}

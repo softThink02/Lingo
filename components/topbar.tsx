@@ -14,8 +14,8 @@ export default function Topbar({ title, xp, xpGoal, avatarUrl }: TopbarProps) {
   const progress = Math.min(100, (xp / xpGoal) * 100);
 
   return (
-    <header className="w-full flex items-center justify-between bg-gradient-to-r rounded-2xl from-neutral-900 to-black/50 border-b mt-4 border-neutral-800 px-6 py-4">
-      <h1 className="text-lg font-semibold text-[#FFFFFF] text-[28px] font-poppins">
+    <header className="w-full flex items-center justify-between bg-gradient-to-r rounded-2xl from-neutral-900 to-black/50 border-b mt-4 border-neutral-800 pl-2 py-4">
+      <h1 className="text-lg ml-2 font-semibold text-[#FFFFFF] text-[28px] font-poppins">
         {title}
       </h1>
 
