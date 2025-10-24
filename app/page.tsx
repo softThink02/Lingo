@@ -26,7 +26,7 @@ export default function DashboardPage() {
             />
           </div>
 
-          <div className="w-80 flex flex-col gap-6">
+          <div className="flex flex-col relative gap-6 w-[340px] border-2 border-green-100">
             <DailyQuest lessonsRemaining={9} />
             <StreakTracker
               days={[
